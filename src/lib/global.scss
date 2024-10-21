@@ -1,0 +1,27 @@
+:root {
+    --mobile-container: 90%;
+}
+
+* {
+    outline: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: none;
+    font-family: "Karla", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    color: black;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+div {
+    margin: auto;
+}
