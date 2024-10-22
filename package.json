@@ -33,6 +33,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"lottie-web": "^5.12.2",
 		"svelte-carousel": "^1.0.25"
 	}
 }

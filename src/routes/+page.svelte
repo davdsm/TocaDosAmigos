@@ -9,6 +9,7 @@
 	import Services from '../components/Services.svelte';
 	import Gallery from '../components/Gallery.svelte';
 	import Testemunials from '../components/Testemunials.svelte';
+	import Reservations from '../components/Reservations.svelte';
 
 	const logo: string = '/full-logo.png';
 	let ready: boolean = false;
@@ -30,7 +31,7 @@
 	onMount(() => {
 		setTimeout(() => {
 			ready = true;
-		}, 5000);
+		}, 5200);
 	});
 </script>
 
@@ -45,4 +46,5 @@
 	<Services {links} />
 	<Gallery />
 	<Testemunials />
+	<Reservations />
 {/if}

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 
-	const party: string = '/party.gif';
+	const friends: string = '/friends.png';
 	let status: 'opening' | 'closing' | 'hide' = 'opening';
 
 	onMount(() => {
@@ -10,12 +10,12 @@
 		}, 2500);
 		setTimeout(() => {
 			status = 'hide';
-		}, 5000);
+		}, 6000);
 	});
 </script>
 
 <div id="loader" class={status}>
-	<img src={party} alt="Toca dos Amigos" height="70px" />
+	<img src={friends} alt="Toca dos Amigos" height="70px" />
 </div>
 
 <style lang="scss">
@@ -27,11 +27,14 @@
 		width: 100vw;
 		height: 100svh;
 		z-index: 5;
-		background: white;
+		background: var(--main-color);
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		transition: all ease 1s;
+		transition-delay: 1.8s;
 		&.closing {
+			left: 100%;
 			& > img {
 				opacity: 1;
 				transform: translateY(0);
@@ -44,7 +47,7 @@
 			display: none;
 		}
 		& > img {
-			width: 30%;
+			width: 50%;
 			height: auto;
 			opacity: 0;
 			animation-name: fadeIn;

@@ -99,7 +99,7 @@
 	#services {
         z-index: -1;
         position: relative;
-		margin: 50px auto;
+		padding: 100px 0;
 		& > .title {
 			width: var(--mobile-container);
 			text-align: right;

@@ -34,7 +34,7 @@
 <style lang="scss">
 	#testemunials {
 		width: var(--mobile-container);
-		margin: 50px auto;
+		padding: 100px 0 50px;
 		text-align: center;
 		& > .title {
 			font-size: 20px;
