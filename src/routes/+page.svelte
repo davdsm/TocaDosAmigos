@@ -1,14 +1,48 @@
-<script>
-    import '$lib/global.scss';
-    import Header from '../components/Header.svelte';
-    const logo = '/full-logo.png'
-    const links = {
-        home: "/",
-        services: "#services",
-        testemunials: "#testemunials",
-        reservations: "#reservations",
-        contacts: "#contacts",
-    }
+<script lang="ts">
+	import { onMount } from 'svelte';
+	
+	import '$lib/global.scss';
+	import Header from '../components/Header.svelte';
+	import Loader from '../components/Loader.svelte';
+	import Hero from '../components/Hero.svelte';
+	import Slider from '../components/Slider.svelte';
+	import Services from '../components/Services.svelte';
+	import Gallery from '../components/Gallery.svelte';
+	import Testemunials from '../components/Testemunials.svelte';
 
+	const logo: string = '/full-logo.png';
+	let ready: boolean = false;
+
+	const links: {
+		home: string;
+		services: string;
+		testemunials: string;
+		reservations: string;
+		contacts: string;
+	} = {
+		home: '/',
+		services: '#services',
+		testemunials: '#testemunials',
+		reservations: '#reservations',
+		contacts: '#contacts'
+	};
+
+	onMount(() => {
+		setTimeout(() => {
+			ready = true;
+		}, 5000);
+	});
 </script>
-<Header logo={logo} links={links} />
+
+{#if !ready}
+	<Loader />
+{/if}
+
+{#if ready}
+	<Header {logo} {links} />
+	<Hero {links} />
+	<Slider />
+	<Services {links} />
+	<Gallery />
+	<Testemunials />
+{/if}
