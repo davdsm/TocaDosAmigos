@@ -95,6 +95,7 @@
 		width: var(--mobile-container);
 		padding: 50px 0 100px;
 		text-align: center;
+		z-index: -1;
 		& > .title {
 			font-size: 20px;
 			font-weight: bold;

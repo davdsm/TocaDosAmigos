@@ -123,6 +123,7 @@
 		padding: 10px 0;
 		margin: 20px auto;
 		transition: all ease 0.2s;
+		z-index: 90;
 		&.fixed {
 			box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 			& > #header-mobile {

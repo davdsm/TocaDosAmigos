@@ -34,7 +34,7 @@
 	];
 	let currentTestemunial = 0;
 	let fadeSpeed = 500;
-	let pauseSpeed = 5000;
+	let pauseSpeed = 10000;
 
 	const rotateTestemunial = () => {
 		currentTestemunial = (currentTestemunial + 1) % testemunials.length;
