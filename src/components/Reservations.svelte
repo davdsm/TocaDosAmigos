@@ -32,7 +32,7 @@
 
 	const handleClickCheckbox = () => {
 		checkboxIcon.click();
-	}
+	};
 
 	onMount(() => {
 		checkboxAnimation = lottie.loadAnimation({
@@ -60,6 +60,7 @@
 			{#each areas as area, i}
 				<li>
 					<button
+						type="button"
 						class={activeAreas.includes(area) ? 'active' : ''}
 						on:click={() => handleArea(area)}>{area}</button
 					>
@@ -81,7 +82,9 @@
 		<div class="checkbox">
 			<input type="checkbox" required hidden bind:this={terms} />
 			<button type="button" class="checkbox-item" bind:this={checkboxIcon}></button>
-			<button type="button" class="text" on:click={handleClickCheckbox}>Li e concordo com os termos descritos.</button>
+			<button type="button" class="text" on:click={handleClickCheckbox}
+				>Li e concordo com os termos descritos.</button
+			>
 		</div>
 		<button class="submit" type="submit">Enviar Mensagem</button>
 	</form>
