@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import lottie from 'lottie-web';
 	import { fly } from 'svelte/transition';
 
 	export let logo: string;
@@ -32,12 +31,14 @@
 		animation = true;
 
 		setTimeout(() => {
-			hamburgerAnimation = lottie.loadAnimation({
-				container: hamburgerIcon,
-				renderer: 'svg',
-				loop: false,
-				autoplay: false,
-				path: '/animations/hamburger/menu.json'
+			import('lottie-web').then((lottie: any) => {
+				hamburgerAnimation = lottie.loadAnimation({
+					container: hamburgerIcon,
+					renderer: 'svg',
+					loop: false,
+					autoplay: false,
+					path: '/animations/hamburger/menu.json'
+				});
 			});
 
 			hamburgerIcon.addEventListener('click', () => {
