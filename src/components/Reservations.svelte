@@ -144,7 +144,7 @@
 <style lang="scss">
 	#reservations {
 		width: var(--mobile-container);
-		padding: 50px 0 100px;
+		padding: 50px 0 20px;
 		text-align: center;
 		z-index: -1;
 		& > .title {

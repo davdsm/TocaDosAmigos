@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	
+
 	import '$lib/global.scss';
 	import Header from '../components/Header.svelte';
 	import Loader from '../components/Loader.svelte';
@@ -10,6 +10,8 @@
 	import Gallery from '../components/Gallery.svelte';
 	import Testemunials from '../components/Testemunials.svelte';
 	import Reservations from '../components/Reservations.svelte';
+	import Contacts from '../components/Contacts.svelte';
+	import Footer from '../components/Footer.svelte';
 
 	const logo: string = '/full-logo.png';
 	let ready: boolean = false;
@@ -20,12 +22,14 @@
 		testemunials: string;
 		reservations: string;
 		contacts: string;
+		terms: string
 	} = {
 		home: '/',
 		services: '#services',
 		testemunials: '#testemunials',
 		reservations: '#reservations',
-		contacts: '#contacts'
+		contacts: '#contacts',
+		terms: '/terms'
 	};
 
 	onMount(() => {
@@ -47,4 +51,6 @@
 	<Gallery />
 	<Testemunials />
 	<Reservations />
+	<Contacts {links} />
+	<Footer />
 {/if}
