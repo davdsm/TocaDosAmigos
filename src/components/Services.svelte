@@ -63,7 +63,7 @@
 					<img src="services/{img}" alt={title} width="" />
 					<h6 class="title">
 						{title}
-						<svg
+						<!-- <svg
 							width="28"
 							height="28"
 							viewBox="0 0 28 28"
@@ -84,7 +84,7 @@
 								stroke-linecap="round"
 								stroke-linejoin="round"
 							/>
-						</svg>
+						</svg> -->
 					</h6>
 					<p class="description">
 						{description}
