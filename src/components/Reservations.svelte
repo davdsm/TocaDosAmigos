@@ -289,10 +289,6 @@
 					font-size: 18px;
 				}
 			}
-			& > .loading {
-				margin: 30px 0;
-				padding: 10px 30px;
-			}
 
 			& > .error {
 				display: block;

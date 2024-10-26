@@ -29,7 +29,7 @@
 			</a>
 		</li>
 		<li>
-			<a href="mailto:tocadosamigos24@gmail.com" target="_blank" class="icon">
+			<a href="mailto:info@tocadosamigos.pt" target="_blank" class="icon">
 				<FaRegEnvelope />
 			</a>
 		</li>

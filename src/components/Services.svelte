@@ -154,9 +154,6 @@
 					@media only screen and (min-width: 992px) {
 						font-size: 26px;
 					}
-					& > svg {
-						width: 15px;
-					}
 				}
 				& > .description {
 					font-size: 10px;
