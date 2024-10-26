@@ -33,14 +33,54 @@
 			height: 175
 		}
 	];
+
+	const sizesDesktop = [
+		{
+			width: '100%',
+			height: '535px'
+		},
+		{
+			width: '100%',
+			height: '600px'
+		},
+		{
+			width: '100%',
+			height: '500px'
+		},
+		{
+			width: '100%',
+			height: '500px'
+		},
+		{
+			width: '100%',
+			height: '520px'
+		},
+		{
+			width: '100%',
+			height: '550px'
+		},
+		{
+			width: '100%',
+			height: '585px'
+		}
+	];
 	const tops = ['-20px', '20px', '30px', '-30px', '15px', '-15px'];
+	const topsDesktop = ['40px', '-30px', '50px', '-10px', '20px', '-20px'];
 
 	const getRandomSize = () => {
+		if (window.innerWidth > 992) {
+			const s = Math.floor(Math.random() * (sizesDesktop.length - 1));
+			return sizesDesktop[s];
+		}
 		const n = Math.floor(Math.random() * (sizes.length - 1));
 		return sizes[n];
 	};
 
 	const getRandomMargin = () => {
+		if (window.innerWidth > 992) {
+			const s = Math.floor(Math.random() * (topsDesktop.length - 1));
+			return topsDesktop[s];
+		}
 		const n = Math.floor(Math.random() * (tops.length - 1));
 		return tops[n];
 	};

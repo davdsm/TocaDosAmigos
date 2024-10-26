@@ -32,10 +32,44 @@
 			height: '185px'
 		}
 	];
+
+	const sizesDesktop = [
+		{
+			width: '100%',
+			height: '335px'
+		},
+		{
+			width: '100%',
+			height: '400px'
+		},
+		{
+			width: '100%',
+			height: '300px'
+		},
+		{
+			width: '100%',
+			height: '300px'
+		},
+		{
+			width: '100%',
+			height: '320px'
+		},
+		{
+			width: '100%',
+			height: '350px'
+		},
+		{
+			width: '100%',
+			height: '385px'
+		}
+	];
 	const getRandomImage = (): string => {
 		return `gallery/${Math.floor(Math.random() * (numberOfImages - 1)) + 1}.jpg`;
 	};
-	const getSize = (pos: number): { width: string; height: string } => {
+	const getSize = (pos: number): { width: string; height: string } => {		
+		if (window.innerWidth > 992) {
+			return sizesDesktop[pos - 1];
+		}
 		return sizes[pos - 1];
 	};
 	const buildImages = () => {
@@ -88,12 +122,7 @@
 <div id="gallery">
 	{#each images as { image, width, height }, i}
 		<div class="davdsm-item" in:fade={{ delay: 250, duration: 300 }}>
-			<img
-				src={image}
-				alt="Imagem do Espaço - Toca dos Amigos"
-				{width}
-				{height}
-			/>
+			<img src={image} alt="Imagem do Espaço - Toca dos Amigos" {width} {height} />
 		</div>
 	{/each}
 </div>
@@ -112,6 +141,5 @@
 				border-radius: 20px;
 			}
 		}
-
 	}
 </style>

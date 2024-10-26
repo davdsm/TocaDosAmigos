@@ -15,8 +15,6 @@
 		'Outro'
 	];
 
-	let loadingIcon: HTMLElement;
-	let loadingAnimation: any;
 	let isLoading: boolean = false;
 
 	let activeAreas: string[] = [];
@@ -24,7 +22,6 @@
 	let name: string = '';
 	let date: string = '';
 	let message: string = '';
-	let terms: boolean = false;
 	let error: false | string;
 	let success: boolean = false;
 
@@ -53,7 +50,7 @@
 			error = 'Não vais deixar nenhuma mensagem?';
 			return;
 		}
-		if (!terms) {
+		if (checkboxDiretction === 1) {
 			error = 'Necessita de aceitar os termos da reserva.';
 			return;
 		}
@@ -68,7 +65,6 @@
 
 	const handleClickCheckbox = () => {
 		checkboxIcon.click();
-		terms = !terms;
 	};
 
 	onMount(() => {
@@ -136,7 +132,9 @@
 			<span in:fly={{ delay: 200, duration: 1000, y: 20 }} class="error">{error}</span>
 		{/if}
 		{#if success}
-			<span in:fly={{ duration: 1000, y: 20 }} class="success">Obrigada. A tua reserva foi enviada. <br/> Irás receber confirmação nos próximos dias.</span>
+			<span in:fly={{ duration: 1000, y: 20 }} class="success"
+				>Obrigada. A tua reserva foi enviada. <br /> Irás receber confirmação nos próximos dias.</span
+			>
 		{/if}
 	</form>
 </div>
@@ -147,10 +145,20 @@
 		padding: 50px 0 20px;
 		text-align: center;
 		z-index: -1;
+		@media only screen and (min-width: 992px) {
+			width: var(--desktop-container);
+			max-width: 850px;
+		}
 		& > .title {
 			font-size: 20px;
 			font-weight: bold;
 			color: #000;
+			margin-bottom: 50px;
+
+			@media only screen and (min-width: 992px) {
+				font-size: 35px;
+				margin-bottom: 100px;
+			}
 			& > span {
 				font-weight: bold;
 				color: var(--main-color);
@@ -163,6 +171,10 @@
 				color: var(--main-color);
 				font-weight: 600;
 				text-align: left;
+
+				@media only screen and (min-width: 992px) {
+					font-size: 20px;
+				}
 			}
 			& > ul {
 				padding: 0;
@@ -183,6 +195,10 @@
 						font-size: 12px;
 						border: 1px solid var(--main-color);
 						transition: all ease 0.2s;
+
+						@media only screen and (min-width: 992px) {
+							font-size: 16px;
+						}
 						&.active {
 							background: var(--main-color);
 							color: #fff;
@@ -203,6 +219,9 @@
 					font-weight: 600;
 					font-size: 14px;
 					width: 100%;
+					@media only screen and (min-width: 992px) {
+						font-size: 18px;
+					}
 				}
 				& > input {
 					width: 100%;
@@ -210,6 +229,9 @@
 					margin: 0 0;
 					border-bottom: 2px solid #ccd0c5;
 					transition: all ease 0.2s;
+					@media only screen and (min-width: 992px) {
+						font-size: 18px;
+					}
 					&:focus {
 						border-bottom: 2px solid var(--main-color);
 					}
@@ -222,6 +244,11 @@
 					padding: 20px;
 					font-size: 12px;
 					transition: all ease 0.2s;
+
+					@media only screen and (min-width: 992px) {
+						font-size: 18px;
+					}
+
 					&:focus {
 						border: 2px solid var(--main-color);
 					}
@@ -252,6 +279,15 @@
 				background: var(--main-color);
 				margin: 30px 0;
 				border-radius: 100px;
+				transition: all ease 0.2s;
+				&:hover {
+					transform: translateY(-5px);
+					box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+				}
+
+				@media only screen and (min-width: 992px) {
+					font-size: 18px;
+				}
 			}
 			& > .loading {
 				margin: 30px 0;
@@ -263,12 +299,20 @@
 				text-align: center;
 				font-size: 12px;
 				color: red;
+
+				@media only screen and (min-width: 992px) {
+					font-size: 18px;
+				}
 			}
 			& > .success {
 				display: block;
 				text-align: center;
 				font-size: 12px;
 				color: green;
+
+				@media only screen and (min-width: 992px) {
+					font-size: 18px;
+				}
 			}
 		}
 	}

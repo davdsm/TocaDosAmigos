@@ -51,13 +51,29 @@
 </script>
 
 <header id="header-container" class={scrollPosY < 50 ? 'top' : 'fixed'}>
-	<div id="header-mobile">
+	<div id="header">
 		{#if animation}
 			<div id="logo" in:fly={{ delay: 1000, duration: 1000, y: -50 }}>
 				<a href={links.home}>
 					<img src={logo} alt="Logo" />
 				</a>
 			</div>
+			<nav id="nav" in:fly={{ delay: 1100, duration: 1000, y: -50 }}>
+				<ul>
+					<li>
+						<a on:click={handleClick} href={links.home}>Início</a>
+					</li>
+					<li>
+						<a on:click={handleClick} href={links.services}>Serviços</a>
+					</li>
+					<li>
+						<a on:click={handleClick} href={links.testemunials}>Testemunhos</a>
+					</li>
+					<li>
+						<a on:click={handleClick} href={links.contacts}>Contactos</a>
+					</li>
+				</ul>
+			</nav>
 			<div id="menu">
 				<a
 					id="reservation-button"
@@ -125,9 +141,10 @@
 		margin: 20px auto;
 		transition: all ease 0.2s;
 		z-index: 90;
+
 		&.fixed {
 			box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-			& > #header-mobile {
+			& > #header {
 				& > #logo {
 					& > a > img {
 						height: 30px;
@@ -145,7 +162,7 @@
 			}
 		}
 	}
-	#header-mobile {
+	#header {
 		max-width: var(--mobile-container);
 		display: flex;
 		justify-content: space-between;
@@ -153,7 +170,34 @@
 		width: 100%;
 		position: relative;
 		transition: all ease 0.2s;
+
+		@media only screen and (min-width: 992px) {
+			width: var(--desktop-container);
+			max-width: var(--desktop-max-width);
+		}
 	}
+
+	#nav {
+		display: none;
+		& > ul {
+			list-style: none;
+			padding: 0;
+			display: flex;
+			justify-content: space-around;
+			align-content: center;
+			& > li {
+				& > a {
+					font-size: 14px;
+					font-weight: 600;
+				}
+			}
+		}
+		@media only screen and (min-width: 992px) {
+			display: inline-block;
+			width: 50%;
+		}
+	}
+
 	#logo {
 		width: 20%;
 		& > a > img {
@@ -167,9 +211,16 @@
 		justify-content: flex-end;
 		align-items: center;
 
+		@media only screen and (min-width: 992px) {
+			width: 20%;
+		}
+
 		& > #hamburger {
 			z-index: 12;
 			margin: 0 0 0 10px;
+			@media only screen and (min-width: 992px) {
+				display: none;
+			}
 		}
 
 		& > a#reservation-button {
@@ -181,7 +232,18 @@
 			font-size: 12px;
 			color: #fff;
 			padding: 10px 20px;
+
 			transition: all ease 0.2s;
+			&:hover {
+				transform: translateY(-5px);
+				box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+			}
+
+			@media only screen and (min-width: 992px) {
+				background: var(--main-color);
+				font-size: 14px;
+			}
+
 			& > svg {
 				color: #fff;
 				fill: #fff;
@@ -205,6 +267,9 @@
 		align-items: center;
 		left: 100%;
 		transition: all ease 0.2s;
+		@media only screen and (min-width: 992px) {
+			display: none;
+		}
 		&.open {
 			left: 0%;
 		}

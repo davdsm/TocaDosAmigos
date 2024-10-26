@@ -97,23 +97,36 @@
 
 <style lang="scss">
 	#services {
-        z-index: -1;
-        position: relative;
+		z-index: -1;
+		position: relative;
 		padding: 100px 0;
+		@media only screen and (min-width: 992px) {
+			font-size: 25px;
+		}
 		& > .title {
 			width: var(--mobile-container);
 			text-align: right;
 			font-size: 17px;
 			color: black;
 			margin-bottom: 30px;
+
+			@media only screen and (min-width: 992px) {
+				font-size: 25px;
+			}
 			& > .part-two {
 				text-align: left;
+				@media only screen and (min-width: 992px) {
+					padding: 0 0 0 50%;
+				}
 				& > span {
 					color: var(--main-color);
 				}
 			}
 		}
 		& > .list {
+			@media only screen and (min-width: 992px) {
+				padding: 100px 0 0 0;
+			}
 			& .service {
 				margin: 0 0;
 				padding: 0 10px;
@@ -121,6 +134,13 @@
 					width: 140px;
 					height: 130px;
 					max-width: 100%;
+
+					@media only screen and (min-width: 992px) {
+						width: 90%;
+						height: 450px;
+						object-fit: contain;
+						object-position: left;
+					}
 				}
 				& > .title {
 					font-size: 16px;
@@ -129,6 +149,11 @@
 					justify-content: space-between;
 					align-items: center;
 					font-weight: 400;
+					margin: 10px 0 0 0;
+
+					@media only screen and (min-width: 992px) {
+						font-size: 26px;
+					}
 					& > svg {
 						width: 15px;
 					}
@@ -137,6 +162,13 @@
 					font-size: 10px;
 					color: #808080;
 					font-weight: 400;
+					margin: 10px 0 0 0;
+
+					@media only screen and (min-width: 992px) {
+						margin: 20px 0 0 0;
+						font-size: 20px;
+						width: 90%;
+					}
 				}
 			}
 		}

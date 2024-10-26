@@ -57,6 +57,9 @@
 			animation-play-state: running;
 			animation-fill-mode: forwards;
 			transform: translateY(20vh);
+			@media only screen and (min-width: 992px) {
+				width: 20%;
+			}
 		}
 
 		@keyframes fadeIn {

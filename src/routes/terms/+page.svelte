@@ -7,7 +7,6 @@
 	import Footer from '../../components/Footer.svelte';
 
 	const logo: string = '/full-logo.png';
-	let ready: boolean = false;
 
 	const links: {
 		home: string;

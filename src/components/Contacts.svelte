@@ -3,14 +3,6 @@
 </script>
 
 <div id="contacts">
-	<div class="right">
-		<img src="/contacts/imageRight.png" alt="Toca dos Amigos" />
-	</div>
-	<h1>Toca dos Amigos</h1>
-
-	<div class="left">
-		<img src="/contacts/imageLeft.png" alt="Toca dos Amigos" />
-	</div>
 	<ul>
 		<li>
 			<a href={links.services}
@@ -97,31 +89,11 @@
 	#contacts {
 		width: var(--mobile-container);
 		margin: 0 auto;
-		h1 {
-			font-weight: 600;
-			font-size: 100%;
-			text-transform: uppercase;
-			font-size: 35px;
-			text-align: center;
-		}
-		& > .right {
-			width: 100%;
-			text-align: right;
-			margin: 0 0 -26px 0;
-			z-index: 2;
-			position: relative;
-		}
-		& > .left {
-			width: 100%;
-			text-align: left;
-			margin: -26px 0 0 0;
-			z-index: 2;
-			position: relative;
+
+		@media only screen and (min-width: 992px) {
+			width: var(--desktop-container);
 		}
 
-		& img {
-			box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-		}
 		& > ul {
 			display: flex;
 			justify-content: center;
@@ -129,8 +101,12 @@
 			list-style: none;
 			width: 100%;
 			margin: 30px 0;
+
 			& > li {
 				margin: 0 5px;
+				@media only screen and (min-width: 992px) {
+					margin: 0 20px;
+				}
 				& > a {
 					font-size: 15px;
 					font-weight: 600;
@@ -140,6 +116,10 @@
 					& > svg {
 						width: 17px;
 						margin: 0 0 0 10px;
+					}
+
+					@media only screen and (min-width: 992px) {
+						font-size: 18px;
 					}
 				}
 			}

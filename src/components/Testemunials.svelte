@@ -87,10 +87,16 @@
 		padding: 100px 0 50px;
 		text-align: center;
 		height: 270px;
+		width: var(--desktop-container);
+		max-width: 550px;
 		& > .title {
 			font-size: 20px;
 			font-weight: bold;
 			color: #000;
+
+			@media only screen and (min-width: 992px) {
+				font-size: 35px;
+			}
 			& > span {
 				font-weight: bold;
 				color: var(--main-color);
@@ -99,6 +105,11 @@
 		& > .list {
 			margin: 30px 20px;
 			text-align: left;
+
+			@media only screen and (min-width: 992px) {
+				margin: 40px 20px;
+			}
+
 			& > .testemunial {
 				& > svg {
 					margin-bottom: 30px;
@@ -108,17 +119,29 @@
 					line-height: 22px;
 					color: #2d2e2e;
 					margin-bottom: 30px;
+
+					@media only screen and (min-width: 992px) {
+						font-size: 20px;
+					}
 				}
 				& > .author {
 					& > p {
 						font-size: 14px;
 						font-weight: 600;
 						color: #2d2e2e;
+
+						@media only screen and (min-width: 992px) {
+							font-size: 18px;
+						}
 					}
 					& > span {
 						font-size: 14px;
 						font-weight: 400;
 						color: #2d2e2e;
+
+						@media only screen and (min-width: 992px) {
+							font-size: 18px;
+						}
 					}
 				}
 			}

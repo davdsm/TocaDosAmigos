@@ -1,5 +1,7 @@
 :root {
     --mobile-container: 90%;
+    --desktop-container: 80%;
+    --desktop-max-width: 1500px;
     --main-color: #6D7369
 }
 
@@ -28,6 +30,6 @@ div {
     margin: auto;
 }
 
-button {
+button, a {
     cursor: pointer;
 }
