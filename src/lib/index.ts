@@ -1,5 +1,5 @@
 // place files you want to import through the `$lib` alias in this folder.
-export const sendMail = async (name: string, date: string, message: string, events: string[]) => {
+export const sendMail = async (name: string, contact: string, date: string, message: string, events: string[]) => {
 	let status: boolean = false;
 	await fetch('https://api.davdsm.pt/sendMail', {
 		method: 'POST',
@@ -10,12 +10,12 @@ export const sendMail = async (name: string, date: string, message: string, even
 		body: JSON.stringify({
 			sender: '🌼 Toca dos Amigos',
 			receiver: {
-				email: 'geral@davdsm.pt',
+				email: 'info@tocadosamigos.pt',
 				name: 'Administração'
 			},
 			subject: `⭐ uhuh voilà. Nova Reserva!`,
 			message: `
-            <!DOCTYPE html>
+<!DOCTYPE html>
 <html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" lang="en">
 
 <head>
@@ -113,11 +113,11 @@ export const sendMail = async (name: string, date: string, message: string, even
 		<tbody>
 			<tr>
 				<td>
-					<table class="row row-1" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+					<table class="row row-1" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;margin-top: 50px;margin-bottom:50px;">
 						<tbody>
 							<tr>
 								<td>
-									<table class="row-content stack" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #8b9385; color: #000000; width: 575px; margin: 0 auto;" width="575">
+									<table class="row-content stack" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #8b9385; border-radius: 30px; color: #000000; width: 575px; margin: 0 auto;" width="575">
 										<tbody>
 											<tr>
 												<td class="column column-1" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
@@ -144,11 +144,11 @@ export const sendMail = async (name: string, date: string, message: string, even
 																	<p style="margin: 0; margin-bottom: 16px;">Trago uma ótima notícia! 🚀 Acabaram de receber uma nova reserva para a <strong>Toca dos Amigos.</strong> Estou muito entusiasmado em compartilhar este sucesso convosco.</p>
 																	<p style="margin: 0; margin-bottom: 16px;">Podem conferir todas as informações deixadas pelo vosso <u><strong>novo</strong></u> cliente mais em baixo.</p>
 																	<p style="margin: 0; margin-bottom: 16px;">&nbsp;</p>
-																	<p style="margin: 0; margin-bottom: 16px;"><strong><u>Nome:</u> </strong>${name},<strong><br><u>Data:</u></strong> ${date},<br><u><strong>Mensagem</strong>:</u><br>${message}</p>
+																	<p style="margin: 0; margin-bottom: 16px;"><strong><u>Nome:</u> </strong>${name},<strong><br><u>Contact:</u></strong> ${contact},<strong><br><u>Data:</u></strong> ${date},<br><u><strong>Mensagem</strong>:</u><br>${message}</p>
 																	<p style="margin: 0; margin-bottom: 16px;"><u><strong>Tipo de Evento</strong></u><strong>:</strong> ${events.map((event: string) => `${event} `)}</p>
 																	<p style="margin: 0; margin-bottom: 16px;">&nbsp;</p>
 																	<p style="margin: 0; margin-bottom: 16px;">Obrigado por confiarem na plataforma para divulgar o espaço fantástico que a Toca dos Amigos é. Estou animado para continuar a ajudar a tornar este espaço num dos melhores da região!</p>
-																	<p style="margin: 0;">Abraços,<br><strong>DAVDSM</strong><br>Equipe de Suporte ao Cliente</p>
+																	<p style="margin: 0;margin-bottom: 56px;">Abraço,<br><strong>DAVDSM</strong><br>Equipe de Suporte ao Cliente</p>
 																</div>
 															</td>
 														</tr>
@@ -161,31 +161,7 @@ export const sendMail = async (name: string, date: string, message: string, even
 							</tr>
 						</tbody>
 					</table>
-					<table class="row row-2" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #6d7369;">
-						<tbody>
-							<tr>
-								<td>
-									<table class="row-content stack" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #8b9385; color: #000000; width: 575px; margin: 0 auto;" width="575">
-										<tbody>
-											<tr>
-												<td class="column column-1" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
-													<table class="icons_block block-1" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-align: center; line-height: 0;">
-														<tr>
-															<td class="pad" style="vertical-align: middle; color: #1e0e4b; font-family: 'Inter', sans-serif; font-size: 15px; padding-bottom: 5px; padding-top: 5px; text-align: center;"><!--[if vml]><table align="center" cellpadding="0" cellspacing="0" role="presentation" style="display:inline-block;padding-left:0px;padding-right:0px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;"><![endif]-->
-																<!--[if !vml]><!-->
-																<table class="icons-inner" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; display: inline-block; padding-left: 0px; padding-right: 0px;" cellpadding="0" cellspacing="0" role="presentation"><!--<![endif]-->
-																</table>
-															</td>
-														</tr>
-													</table>
-												</td>
-											</tr>
-										</tbody>
-									</table>
-								</td>
-							</tr>
-						</tbody>
-					</table>
+					
 				</td>
 			</tr>
 		</tbody>
@@ -193,17 +169,17 @@ export const sendMail = async (name: string, date: string, message: string, even
 </body>
 
 </html>
-            `
+			`
 		})
 	})
 		.then((response) => {
-			console.log('✈️ Email Enviado? - ', response.body);
+			console.log('✈️ Email 1 Enviado? - ', response.body);
 			console.log('---------------------------------------------------');
 			console.log('');
 			status = true;
 		})
 		.catch((response) => {
-			console.log('✈️ Email Não Enviado? - ', response.body);
+			console.log('✈️ Email 1 Não Enviado? - ', response.body);
 			console.log('---------------------------------------------------');
 			console.log('');
 			status = false;

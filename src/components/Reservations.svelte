@@ -22,6 +22,7 @@
 	let name: string = '';
 	let date: string = '';
 	let message: string = '';
+	let contact: string = '';
 	let error: false | string;
 	let success: boolean = false;
 
@@ -50,6 +51,10 @@
 			error = 'Não vais deixar nenhuma mensagem?';
 			return;
 		}
+		if (!contact) {
+			error = 'Precisamos de um contacto.';
+			return;
+		}
 		if (checkboxDiretction === 1) {
 			error = 'Necessita de aceitar os termos da reserva.';
 			return;
@@ -58,7 +63,11 @@
 		isLoading = true;
 
 		setTimeout(async () => {
-			success = await sendMail(name, date, message, activeAreas);
+			success = await sendMail(name, contact, date, message, activeAreas);
+			name = "";
+			contact = "";
+			message = "";
+			date = '';
 			isLoading = false;
 		}, 3000);
 	};
@@ -105,6 +114,10 @@
 		<div class="input">
 			<label for="name">Nome</label>
 			<input type="text" name="name" placeholder="O Teu Nome" bind:value={name} />
+		</div>
+		<div class="input">
+			<label for="phone">Contacto</label>
+			<input type="text" name="phone" placeholder="Número de Telefone / Telemóvel" bind:value={contact} />
 		</div>
 		<div class="input">
 			<label for="date">Data</label>
