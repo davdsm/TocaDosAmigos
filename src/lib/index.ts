@@ -10,7 +10,7 @@ export const sendMail = async (name: string, contact: string, date: string, mess
 		body: JSON.stringify({
 			sender: '🌼 Toca dos Amigos',
 			receiver: {
-				email: 'info@tocadosamigos.pt',
+				email: 'samuel_david_8@hotmail.com',
 				name: 'Administração'
 			},
 			subject: `⭐ uhuh voilà. Nova Reserva!`,
