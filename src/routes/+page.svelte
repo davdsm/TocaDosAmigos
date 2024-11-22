@@ -49,7 +49,7 @@
 	<Slider />
 	<Services {links} />
 	<Gallery />
-	<Testemunials />
+	<!-- <Testemunials /> -->
 	<Reservations />
 	<Contacts {links} />
 	<Footer />

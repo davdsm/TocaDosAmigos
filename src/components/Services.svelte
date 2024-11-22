@@ -39,11 +39,9 @@
 
 <div id="services">
 	<div class="title">
-		<h5 class="part-one">Um espaço aconchegante, <br /> com todos os serviços necessários,</h5>
-		<h5 class="part-two">
-			cuidadosamente planejados e personalizados para criar atmosferas únicas e <span>
-				celebrar momentos especiais.</span
-			>
+		<h5 class="part-one">
+			Um espaço aconchegante, com todos os serviços necessários, cuidadosamente planejados e
+			personalizados para criar atmosferas únicas e <span> celebrar momentos especiais.</span>
 		</h5>
 	</div>
 	<div class="list">
@@ -104,19 +102,20 @@
 			font-size: 25px;
 		}
 		& > .title {
-			width: var(--mobile-container);
-			text-align: right;
-			font-size: 17px;
+			width: 50%;
+			text-align: center;
+			font-size: 25px;
 			color: black;
 			margin-bottom: 30px;
 
-			@media only screen and (min-width: 992px) {
-				font-size: 25px;
+			@media only screen and (max-width: 992px) {
+				font-size: 17px;
+				width: 90%;
 			}
 			& > .part-two {
-				text-align: left;
+				text-align: center;
 				@media only screen and (min-width: 992px) {
-					padding: 0 0 0 50%;
+					padding: 0 0 0 0;
 				}
 				& > span {
 					color: var(--main-color);
