@@ -60,7 +60,7 @@
 		>
 			{#each services as { title, img, description }}
 				<a href={links.contacts} class="service">
-					<img src="services/{img}" alt={title} width="" />
+					<img src="/services/{img}" alt={title} width="" />
 					<h6 class="title">
 						{title}
 						<!-- <svg
