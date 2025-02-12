@@ -66,9 +66,9 @@
 					<li>
 						<a on:click={handleClick} href={links.services}>Serviços</a>
 					</li>
-					<li>
+					<!-- <li>
 						<a on:click={handleClick} href={links.testemunials}>Testemunhos</a>
-					</li>
+					</li> -->
 					<li>
 						<a on:click={handleClick} href={links.contacts}>Contactos</a>
 					</li>
